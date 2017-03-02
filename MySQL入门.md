@@ -17,9 +17,11 @@ sudo service mysql start/stop/restart
 ```
 
 ## 数据库连接方式
+
 ### 应用程序驱动
 + 应用程序使用驱动（connector/driver）客户端连接MySQL
 + MySQL驱动程序涵盖各种主流语言
+
 ### MySQL命令行
 + 验证命令行工具（mysql-client）是否安装成功
 ```
@@ -48,23 +50,29 @@ mysql -u root -p // mac下连接
 + 常用工具有Navicat/MySQLWokBench
 
 ## SQL语言入门
+
 ### 关系型数据库的特点
 + 数据存放在表中
 + 表的每一行被称为记录
 + 表中的所有记录都有相同的字段（列）
+
 ### 创建与查看数据库
 ```
 mysql> CREATE DATABASE abc;  //创建数据库abc
 mysql> show databases; 
 ```
+
 ### SQL是什么
 + SQL是一种特殊目的的编程语言，用于关系型数据库中的标准数据存取操作
 + SQL是与数据库进行沟通的钥匙
+
 ### SQL用处
 + 创建表及表中字段
 + 对表进行增删查改操作
 + 用SQL操作数据库的一切
+
 ### SQL语句的分类
+
 #### DDL（数据定义）
 + CREATE/DROP/ALTER TABLE //创建／删除／修改表
 + 查看当前数据库有哪些表
@@ -91,6 +99,7 @@ mysql> alter table stu add column gender varchar(20);  // 新增字段gender
 mysql> alter table stu modify column gender varchar(10);  // 修改字段gender
 mysql> alter table stu drop column gender;  // 删除字段gender
 ```
+
 #### DML（数据操作）
 + 向表中插入／修改／删除记录（select--根据条件从表中查询记录）
 + SELECT FROM TABLE
@@ -112,10 +121,12 @@ update stu set age=29 where id=1; // 将id=1的所在的记录的字段age改为
 ```
 delete from stu where id=1; // 将id=1的所在的记录删除
 ```
+
 #### DCL（权限管理）
 + 控制数据库的访问权限等设置
 + GRANT
 + REVOKE
+
 #### TCL（事务控制）
 + 控制事务进展
 + COMMIT

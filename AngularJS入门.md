@@ -5,6 +5,7 @@
 + AngularJS与Angular完全不兼容
  
 ## 核心特点
+
 ### MVVM
 + 社区一直将AngularJS统称为前端MVC框架，但实际上AngularJS整体上更接近MVVM模式
 + MVC：Model-View-Control(模型-视图-控制器)，view指的是视图；model指的是实体模型；control指的是控制器，用于控制model与view之间的交互
@@ -12,10 +13,13 @@
     + 以数据绑定为基础架构
     + view和model分离，viewModel负责完成view于model间的交互,负责业务逻辑
     + view的变动，自动反映在viewModel；反之亦然
+
 ### 双向绑定
 + 从界面的操作能实时反映到数据
 + 数据的变更能实时展现到界面
+
 ### 依赖注入
+
 ### 模块化
 + 隔离命名空间--AngularJS没有暴露在Global的对象（angular对象本身除外）
 + 处理依赖关系--AngularJS的模块指定依赖关系
@@ -23,6 +27,7 @@
     + 模块先定义（angular.module），再使用
     + 不限制模块定义的顺序
     + 不限制各个service、controller、directive注册到模块的顺序
+    
 ### 语义化标签
 
 ## $scope（scope）作用域
