@@ -25,13 +25,20 @@ nohup program & //ssh关闭后保持当前进程继续运行,如： nohup npm st
 ```
 
 ## 压缩/解压
-+ tar压缩/解压(tar [-cxtzjvfpPN] 文件与目录 ....)
+
+### tar压缩/解压(tar [-cxtzjvfpPN] 文件与目录 ....)
 ```
 // 将整个 /etc 目录下的文件全部打包成为/tmp/etc.tar
 tar -cvf /tmp/etc.tar /etc    // 仅打包，不压缩
 tar -zcvf /tmp/etc.tar.gz /etc   // 打包后，以 gzip 压缩
 // 将 /tmp/etc.tar.gz 文件解压缩在当前目录下
 tar -zxvf /tmp/etc.tar.gz
+```
+
+### 7z压缩/解压
+```
+7z a Files.7z * -r ： //增加当前文件夹及其子文件夹下的所有文件到Files.7z中
+7z x Files.7z -oabc //解压Files.7z到abc文件夹
 ```
 
 ## 查看日志
