@@ -24,4 +24,14 @@ function sss(err,data) {
 }
 ```
 
-## 其他
+## Ubuntu下编译node
++ 测试Ubuntu版本为Ubuntu 16.04 LTS
++ 下载源码包
++ 解压并进入解压后的目录
++ 开始编译
+```
+./configure
+make
+make install
+cp /usr/local/bin/node /usr/sbin/
+```
