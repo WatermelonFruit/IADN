@@ -22,6 +22,22 @@ function getDistance(lat1, lng1, lat2, lng2) {
     return s;
 };
 
+// 判断一个点是否在一个多边形范围内
+function isPointInArr(point, arr) {
+    var x = point[0];
+    var y = point[1];
+    var inside = false;
+    for (var i = 0, j = arr.length - 1; i < arr.length; j = i++) {
+        var xi = arr[i][0], yi = arr[i][1];
+        var xj = arr[j][0], yj = arr[j][1];
+        var intersect = ((yi > y) != (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) {
+            inside = !inside;
+        }
+    }
+    return inside;
+}
+
 // 获得两个数之间的随机数
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
