@@ -18,7 +18,7 @@ mv file1 dir1    // 将文件 file1，移到目录 dir1下，文件名仍为 fil
 mv dir1 dir2    // 若目录 dir2 存在，则将目录 dir1，及其所有文件和子目录，移到目录 dir2 下，新目录名称为 dir1。若目录 dir2 不存在，则将dir1，及其所有文件和子目录，更改为目录 dir2
 ```
 
-## ssh
+## scp & ssh
 ```
 scp (-r) localpath user@ip:/remotepath // ssh本地传文件(夹)到服务器(-r 传文件夹)
 nohup program & //ssh关闭后保持当前进程继续运行,如： nohup npm start & 

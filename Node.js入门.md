@@ -24,7 +24,9 @@ function sss(err,data) {
 }
 ```
 
-## Ubuntu下编译node
+## Ubuntu下安装node
+
+### 源码编译
 + 测试Ubuntu版本为Ubuntu 16.04 LTS
 + 下载源码包
 + 解压并进入解压后的目录
@@ -35,3 +37,12 @@ make
 make install
 cp /usr/local/bin/node /usr/sbin/
 ```
+
+### 已编译好的源码安装
++ 从node官网下载Linux Binaries
++ 解压并进入解压后的目录
++ 拷贝安装
+```
+cp -r bin include lib share /usr/local/
+```
+

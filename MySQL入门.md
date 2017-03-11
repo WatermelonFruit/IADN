@@ -98,6 +98,7 @@ drop table stu; // 删除表
 mysql> alter table stu add column gender varchar(20);  // 新增字段gender
 mysql> alter table stu modify column gender varchar(10);  // 修改字段gender
 mysql> alter table stu drop column gender;  // 删除字段gender
+mysql> alter table stu change notrName noteName integer; //将字段notrName更改为noteName
 ```
 
 #### DML（数据操作）
