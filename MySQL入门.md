@@ -32,10 +32,9 @@ mysql -V
     + 不要将密码直接输入在命令行里，存在安全风险
 + 常用命令
 ```
-mysql // 进入mysql cmd
-status // 查看版本等信息
-show variables like 'port';  //查看端口号
-show processlist;
+mysql> status // 查看版本等信息
+mysql> show variables like 'port';  //查看端口号
+mysql> show processlist;
 ```
 + Socket连接（本地连接）
 ```
@@ -98,7 +97,7 @@ drop table stu; // 删除表
 mysql> alter table stu add column gender varchar(20);  // 新增字段gender
 mysql> alter table stu modify column gender varchar(10);  // 修改字段gender
 mysql> alter table stu drop column gender;  // 删除字段gender
-mysql> alter table stu change notrName noteName integer; //将字段notrName更改为noteName
+mysql> alter table stu change notrName noteName varchar(100); //将字段notrName更改为noteName
 ```
 
 #### DML（数据操作）

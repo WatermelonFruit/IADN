@@ -2,6 +2,7 @@
 
 ## 进程
 ```
+lsof -n -P| grep :xxx  // 查看端口号是否被占用
 ps aux | grep xxx  //如 ps aux | grep node //查看进程
 kill -9 PID //kill进程
 ```
