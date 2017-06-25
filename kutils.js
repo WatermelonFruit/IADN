@@ -43,7 +43,7 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-// 时间转化为string 例如 getTimeToString(new Date(new Date().getTime() - 36000000), 'yyyy-MM-dd-h-mm-ss')
+// 时间转化为string 例如 getTimeToString(new Date(new Date().getTime() - 1000 * 60 * 60 *24), 'yyyy-MM-dd-h-mm-ss')
 function getTimeToString(date, fmt) { //原author: meizz， jk改造
     var o = {
         "M+": date.getMonth() + 1, //月份
