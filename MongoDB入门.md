@@ -92,6 +92,10 @@ db.info.find({name:{$exists: true}}) // exists
 db.info.find({name:{$exists: false}}) // not exists
 // drop
 db.info.drop()
+// update
+// upsert 可选(default:false) 如果根据查询条件没找到对应的文档:如果设置为true,相当于执行insert;如果设置为false,不做任何的操作。
+// multi 可选(default:false) 如果根据查询条件找到对应的多条记录:如果设置为false时，只修改第一条;如果设置为true，全部更新
+db.info.update({name:'Stim'},{$set:{name:'John',age:18}},upsert:false,multi:false)
 ```
 
 ### 索引
