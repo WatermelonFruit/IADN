@@ -83,6 +83,13 @@ show collections
 db.info.insert([{name:'Stim',age:25,brothers:['John','Ian']},{name:'',age:32,brothers:['Jim','Starr']}])
 // find
 db.info.find()
+db.info.find().count() // 总记录数
+db.info.find().limit(10) // limit 10
+db.info.find({name:{$ne: 'Stim'}}) // 不等于
+db.info.find({name:{$in: ['Stim','John']}}) // in
+db.info.find({name:{$nin: ['Stim','John']}}) // not in
+db.info.find({name:{$exists: true}}) // exists
+db.info.find({name:{$exists: false}}) // not exists
 // drop
 db.info.drop()
 ```
@@ -90,5 +97,5 @@ db.info.drop()
 ### 索引
 ```
 // collections name 为 info
-db.info.find({name:'user'}).explain()
+db.info.find({name:'user'}).explain() // 索引执行计划
 ```
