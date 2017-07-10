@@ -15,20 +15,20 @@
     + Docker集中存放镜像文件的场所
 
 ## 基本操作
-```
-docker pull [name][: tag]  // 下载镜像 name--镜像名，tag--标签/版本号，默认latest版本;示例：docker pull ubuntu: 14.04
-docker images // 列出主机上已有镜像信息
-docker tag ubuntu:latest myubuntu:latest // 本地镜像添加标签，docker tag命令添加的标签实际上起到了类似链接的作用
-docker inspect ubuntu:16.04 // 获取镜像的详细信息
-docker history ubuntu:16.04 // 查看镜像创建过程
-docker search ubuntu // 搜索镜像
-docker rmi myubuntu:latest // 删除镜像；当同一个镜像拥有多个标签的时候，docker rmi命令只是删除该镜像多个标签中的指定标签（只有一个标签则会删除镜像文件），并不影响镜像文件
-docker ps // 查看正在运行的container
-docker ps -a // 查看所有container
-docker start xxx // 启动contaier xxx
-docker stop xxx // 停止contaier xxx
-docker stop $(docker ps -q) // 停用全部运行中的container
-docker rm $(docker ps -aq) // 删除所有container
+```bash
+docker pull [name][: tag]  # 下载镜像 name--镜像名，tag--标签/版本号，默认latest版本;示例：docker pull ubuntu: 14.04
+docker images # 列出主机上已有镜像信息
+docker tag ubuntu:latest myubuntu:latest # 本地镜像添加标签，docker tag命令添加的标签实际上起到了类似链接的作用
+docker inspect ubuntu:16.04 # 获取镜像的详细信息
+docker history ubuntu:16.04 # 查看镜像创建过程
+docker search ubuntu # 搜索镜像
+docker rmi myubuntu:latest # 删除镜像；当同一个镜像拥有多个标签的时候，docker rmi命令只是删除该镜像多个标签中的指定标签（只有一个标签则会删除镜像文件），并不影响镜像文件
+docker ps # 查看正在运行的container
+docker ps -a # 查看所有container
+docker start xxx # 启动contaier xxx
+docker stop xxx # 停止contaier xxx
+docker stop $(docker ps -q) # 停用全部运行中的container
+docker rm $(docker ps -aq) # 删除所有container
 ```
 
 ## 镜像的创建
