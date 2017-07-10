@@ -19,7 +19,7 @@
 + 包名 不要包含js/node等
 
 ### 异步
-```
+```js
 function sss(err,data) {
 }
 ```
@@ -31,7 +31,7 @@ function sss(err,data) {
 + 下载源码包
 + 解压并进入解压后的目录
 + 开始编译
-```
+```bash
 ./configure
 make
 make install
@@ -42,7 +42,7 @@ cp /usr/local/bin/node /usr/sbin/
 + 从node官网下载Linux Binaries
 + 解压并进入解压后的目录
 + 拷贝安装
-```
+```bash
 cp -r bin include lib share /usr/local/
 ```
 
