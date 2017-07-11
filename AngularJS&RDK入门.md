@@ -7,7 +7,7 @@
 ## RDK、AngularJS与Angular之间的关系
 + 通常意义上，AngularJS指的Angular(1.x)；Angular指的是Angular(2+)
 + RDK是基于ANgularJS（1.x）开发的
-+ 简单来说，可以认为RDK是通过AngularJS的自定义指令对AngularJS进行了二次封装。
++ 简单来说，可以认为RDK是通过AngularJS的自定义指令对AngularJS进行了二次封装
 + AngularJS与Angular完全不兼容
  
 ## 核心特点
