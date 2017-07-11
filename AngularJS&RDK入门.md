@@ -1,7 +1,13 @@
-# AngularJS入门
+# AngularJS & RDK入门
+
+## 前述
++ 使用[RDK](https://github.com/rdkmaster/rdk)前，你最好了解一下RequireJS（RequireJS是基于AMD规范的模块化方案）
++ 本文所述RDK部分仅限前端部分，不涉及后端
       
-## AngularJS与Angular之间的关系
+## RDK、AngularJS与Angular之间的关系
 + 通常意义上，AngularJS指的Angular(1.x)；Angular指的是Angular(2+)
++ RDK是基于ANgularJS（1.x）开发的
++ 简单来说，可以认为RDK是通过AngularJS的自定义指令对AngularJS进行了二次封装。
 + AngularJS与Angular完全不兼容
  
 ## 核心特点
@@ -50,6 +56,7 @@
 ## 指令
 + AngularJS应用最重要的部分,它定义了AngularJS应用的根元素
 + 像ng-click/ng-model/ng-bind等，属于AngularJS内置的指令
++ 像rdk_table/rdk_time/rdk_input等，本质上属于AngularJS的自定义指令
 + 在实际项目中，很多时候，需要根据需要来自定义指令
       
 ## 服务（Service）
