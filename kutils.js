@@ -68,6 +68,13 @@ function getTimeToString(date, fmt) { //原author: meizz， jk改造
   return fmt
 }
 
+  // 根据输入日期，返回当月最后一日，输入日期格式为'yyyy-MM-dd'
+  function getMonthEnd(date) {
+    var dateArr = date.split('-')
+    var monthStart = new Date(dateArr[0], dateArr[1], 1)
+    return dateArr[0] + '-' + dateArr[1] + '-' + new Date(new Date(dateArr[0], dateArr[1], 1).getTime() - 1000 * 60 * 60 * 24).getDate()
+  }
+
 // 获得两个日期之间的所有日期(含本身)
 // 如 getDateArr('2017-03-24', '2017-04-02') -> ['2017-03-24', '2017-03-25', '2017-03-26', '2017-03-27', '2017-03-28', '2017-03-29', '2017-03-30', '2017-04-01', '2017-04-02']
 function getDateArr(start, end) {
