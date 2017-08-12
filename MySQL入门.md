@@ -15,6 +15,18 @@ apt install mysql-server-5.7
 ps -ef|grep mysqld
 sudo service mysql start/stop/restart
 ```
+## docker下安装MySQL
+```bash
+docker pull mysql
+# -p 3306:3306：将容器的3306端口映射到主机的3306端口
+# -v /home/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf 将主机/home/docker/mysql/conf/my.cnf挂载到容器的/etc/mysql/my.cnf
+# -v /home/docker/mysql/logs:/logs 将主机/home/docker/mysql/logs挂载到容器的/logs
+# -v /home/docker/mysql/data:/mysql_data 将主机/home/docker/mysql/data挂载到容器的/mysql_data
+# -e MYSQL_ROOT_PASSWORD=123456 初始化root用户的密码
+docker run -p 3306:3306 --name mysql -v /home/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /home/docker/mysql/logs:/logs -v /home/docker/mysql/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+docker exec -it mysql bash
+mysql -uroot -p
+```
 
 ## 数据库连接方式
 
@@ -35,6 +47,7 @@ mysql -V
 mysql> status # 查看版本等信息
 mysql> show variables like 'port';  #查看端口号
 mysql> show processlist;
+mysql> quit #退出mysql命令行
 ```
 + Socket连接（本地连接）
 ```bash
