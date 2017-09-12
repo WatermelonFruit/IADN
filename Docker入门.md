@@ -31,6 +31,17 @@ docker stop $(docker ps -q) # 停用全部运行中的container
 docker rm $(docker ps -aq) # 删除所有container
 ```
 
+## 存出与载入镜像
++ 使用`docker save`和`docker load`来存出与载入镜像
++ 示例
+```bash
+# 存出镜像
+docker save -o ubuntu16.04.tar ubuntu:16.04
+# 以下两种方式均可载入镜像
+docker load --input ubuntu16.04.tar
+docker load < ubuntu16.04.tar
+```
+
 ## 镜像的创建
 + 基于已有镜像容器创建
 + 基于模版导入
