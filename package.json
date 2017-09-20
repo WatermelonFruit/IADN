@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "docs",
   "author": "WatermelonFruit",
-  "license": "GPL",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/WatermelonFruit/docs.git"
