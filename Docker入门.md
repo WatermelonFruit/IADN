@@ -43,6 +43,29 @@ docker load < ubuntu16.04.tar
 ```
 
 ## 镜像的创建
-+ 基于已有镜像容器创建
-+ 基于模版导入
-+ 基于Dockerfile创建
+### 基于已有镜像容器创建
+### 基于模版导入
+### 基于Dockerfile创建
+以node应用为例,进入node应用目录,创建并编辑Dockerfile文件
+```conf
+#设置基础镜像，若本地不存在基础镜像，会从远程服务器pull镜像
+FROM node:8.5.0
+
+#创建app目录,保存我们的代码
+RUN mkdir -p /usr/src/app
+#设置工作目录
+WORKDIR /usr/src/app
+
+#复制所有文件到 工作目录。
+COPY . /usr/src/app
+
+#编译运行node项目，npm安装依赖,利用镜像
+#WORKDIR /usr/src/node/website
+RUN npm i --production --registry=https://registry.npm.taobao.org
+
+#暴露container的端口
+EXPOSE 8888
+
+#运行命令
+CMD ["npm", "start"]
+```
