@@ -64,8 +64,14 @@ COPY . /usr/src/app
 RUN npm i --production --registry=https://registry.npm.taobao.org
 
 #暴露container的端口
-EXPOSE 8888
+EXPOSE 3000
 
 #运行命令
 CMD ["npm", "start"]
+```
+```bash
+# 创建镜像
+docker build -t <image-name> .
+# 使用镜像
+docker run --name <container-name> --restart=always -v /home/docker/<image-name>/logs://usr/src/app/logs -p 8181:3000 -d <image-name> 
 ```
