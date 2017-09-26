@@ -73,5 +73,5 @@ CMD ["npm", "start"]
 # 创建镜像
 docker build -t <image-name> .
 # 使用镜像
-docker run --name <container-name> --restart=always -v /home/docker/<image-name>/logs://usr/src/app/logs -p 8181:3000 -d <image-name> 
+docker run --name <container-name> --restart=always -v /home/docker/<image-name>/logs:/usr/src/app/logs -p 8181:3000 -d <image-name> 
 ```
