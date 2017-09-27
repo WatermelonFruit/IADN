@@ -44,7 +44,17 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
 }
 
-// 时间转化为string 例如 getTimeToString(new Date(new Date().getTime() - 1000 * 60 * 60 *24), 'yyyy-MM-dd-h-mm-ss')
+// 获取时间戳 当日零点
+function getTimeStamp() {
+  let today = new Date();
+  today.setHours(0);
+  today.setMinutes(0);
+  today.setSeconds(0);
+  today.setMilliseconds(0);
+  return today
+}
+
+// 时间转化为string 例如 getTimeToString(new Date(new Date().getTime() - 1000 * 60 * 60 *24), 'yyyy-MM-dd-hh-mm-ss')
 function getTimeToString(date, fmt) { //原author: meizz， jk改造
   var o = {
     "M+": date.getMonth() + 1, //月份
