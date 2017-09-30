@@ -24,7 +24,7 @@ function sss(err,data) {
 }
 ```
 
-## Ubuntu下安装node
+## linux下安装node
 
 ### 源码编译
 + 测试Ubuntu版本为Ubuntu 16.04 LTS
@@ -39,10 +39,38 @@ cp /usr/local/bin/node /usr/sbin/
 ```
 
 ### 已编译好的源码安装
-+ 从node官网下载Linux Binaries
-+ 解压并进入解压后的目录
-+ 拷贝安装
++ 从node官网下载Linux Binaries,例如下载后文件名为 node-v8.x.x-linux-x64.tar.gz，并移动到指定安装目录，这里假定为 /usr/local/src
++ 安装
 ```bash
-cp -r bin include lib share /usr/local/
+# 解压
+tar -zcvf node-v8.x.x-linux-x64.tar.gz
+# 通过软链接的形式将node和npm连接到系统默认的PATH目录下的一个（此处以/usr/local/bin为例）
+ln -s /usr/local/src/node-v8.x.x-linux-x64/bin/node /usr/local/bin/node
+ln -s /usr/local/src/node-v8.x.x-linux-x64/bin/npm /usr/local/bin/npm
+```
+
+### [nvm](https://github.com/creationix/nvm)安装
+
+## 离线安装npm全局包
++ 此处以离线安装pm2为例
++ 在具备互联网连接的PC执行
+```bash
+npm i pm2 -g
+# 查看npm默认全局安装目录
+npm config get prefix
+# 进入npm默认全局安装目录后执行
+cd lib/node_modules # windows下可能为 cd node_modules
+# 打包pm2
+tar czvf pm2.tar.gz pm2
+```
++ 在不具备互联网连接的服务器执行
+```bash
+# 查看npm默认全局安装目录
+npm config get prefix
+# 将上述打包的 pm2.tar.gz 上传到 服务器的npm默认全局安装目录(<npm_path>)下的 lib/node_modules 下
+# 解压
+tar -zcvf pm2.tar.gz
+# 通过软链接的形式将node和npm连接到系统默认的PATH目录下的一个（此处以/usr/local/bin为例）
+ln -s <npm_path>/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
 ```
 
