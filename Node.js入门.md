@@ -3,13 +3,16 @@
 ## 基本约定
 
 ### 常用命令
-+ npm root 查看当前包的安装路径
-+ npm root -g 查看全局安装包的路径
-+ npm install 安装命令
-+ npm install -g 全局安装
-+ npm ls 显示所有的安装包
-+ npm remove 卸载命令
-+ npm update 更新
+```bash
+npm root # 查看当前包的安装路径
+npm root -g # 查看全局安装包的路径
+npm config get prefix # 查看npm默认全局安装目录
+npm install <name>  # 安装命令
+npm install -g <name> # 全局安装
+npm ls # 显示所有的安装包
+npm remove <name> # 卸载命令
+npm update <name> # 更新
+```
 
 ### 命名规则
 + 变量命名 adminUser passwrod studentID
@@ -56,21 +59,20 @@ ln -s /usr/local/src/node-v8.x.x-linux-x64/bin/npm /usr/local/bin/npm
 + 在具备互联网连接的PC执行
 ```bash
 npm i pm2 -g
-# 查看npm默认全局安装目录
-npm config get prefix
-# 进入npm默认全局安装目录后执行
-cd lib/node_modules # windows下可能为 cd node_modules
+# 查看全局安装包的路径
+npm root -g
+# 进入全局安装包的路径后执行
 # 打包pm2
 tar czvf pm2.tar.gz pm2
 ```
 + 在不具备互联网连接的服务器执行
 ```bash
-# 查看npm默认全局安装目录
-npm config get prefix
-# 将上述打包的 pm2.tar.gz 上传到 服务器的npm默认全局安装目录(<npm_path>)下的 lib/node_modules 下
+# 查看全局安装包的路径
+npm root -g
+# 将上述打包的 pm2.tar.gz 上传到 服务器的npm默认全局安装目录(<npm_path>)下
 # 解压
 tar -zcvf pm2.tar.gz
 # 通过软链接的形式将node和npm连接到系统默认的PATH目录下的一个（此处以/usr/local/bin为例）
-ln -s <npm_path>/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
+ln -s <npm_path>/pm2/bin/pm2 /usr/local/bin/pm2
 ```
 
