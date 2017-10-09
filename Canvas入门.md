@@ -1,7 +1,7 @@
 # Canvas入门
 
 ## 基本要点
-+ var ctx = document.getElementById('canvas').getContext('2d')
++ const ctx = document.getElementById('canvas').getContext('2d')
 + 每次开始绘制一个图形请使用ctx.beginPath()
 + 画布的宽高最好通过js计算动态设置html上的width/height,而非通过css设置(避免模糊)
 
