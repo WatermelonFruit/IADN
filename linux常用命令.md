@@ -54,5 +54,14 @@ tar -Jxf xxx.tar.xz
 
 ## 查看日志
 ```bash
+# 查看日志
+less /home/proc/logs/log.txt
+# 实时查看
 tail -f /home/proc/logs/log.txt # 查看/home/proc/logs/log.txt日志文件
+```
+
+## 计划
+```bash
+# 用来周期性的执行某种任务或等待处理某些事件的一个守护进程(类似win下计划任务)
+crontab -e
 ```
