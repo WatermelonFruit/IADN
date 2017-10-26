@@ -62,6 +62,14 @@ use test
 db.createUser({user:'test',pwd:'test123',roles: [{role: 'readWrite',db: 'test'}]})
 # 显示用户
 show users
+# 修改用户密码 需先 db.auth
+# 方法1
+db.changeUserPassword('test', 'newpwd')
+# 方法2
+db.updateUser({
+  'test',
+  {customData: {'pwd':'newpwd'}})
+})
 # 退出mongo后
 cp /entrypoint.sh /data/db
 # 宿主机执行
