@@ -25,6 +25,8 @@ server {
 
     #location / {
 	# root /usr/share/nginx/html;
+    # 路由前端处理
+    # try_files $uri /index.html;
     #}
 
     #error_page  404              /404.html;
