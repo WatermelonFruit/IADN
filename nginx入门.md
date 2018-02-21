@@ -23,8 +23,18 @@ server {
     #charset koi8-r;
     #access_log  /var/log/nginx/host.access.log  main;
 
+    # gzip配置
+    # gzip on
+
+    # 多spa处理
+    # location /test {
+	#     alias /usr/share/nginx/html/test;
+    #     index index.html;
+    #     try_files $uri /test/index.html;
+    # }
     #location / {
 	# root /usr/share/nginx/html;
+    #index index.html index.htm;
     # 路由前端处理
     # try_files $uri /index.html;
     #}
