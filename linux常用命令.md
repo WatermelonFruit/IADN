@@ -59,9 +59,17 @@ less /home/proc/logs/log.txt
 # 实时查看
 tail -f /home/proc/logs/log.txt # 查看/home/proc/logs/log.txt日志文件
 ```
+## 修改默认编辑器
+```bash
+select-editor
+```
 
 ## 计划
 ```bash
 # 用来周期性的执行某种任务或等待处理某些事件的一个守护进程(类似win下计划任务)
+# 编辑定时任务
 crontab -e
+# 例如，00 00 * * * sh /home/docker/nginx-t/html/xuancang/scripts/build-admin.sh
+# 列出定时任务
+crontab -l
 ```
