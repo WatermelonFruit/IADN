@@ -1,4 +1,4 @@
-# MySQL入门
+# mysql入门
 
 ## 前述
 + 本文所述安装环境为ubuntu16.04LTS 

@@ -1,4 +1,4 @@
-# AngularJS & RDK入门
+# angularjs & rdk手册
 
 ## 前述
 + 使用[RDK](https://github.com/rdkmaster/rdk)前，你最好了解一下RequireJS（RequireJS是基于AMD规范的模块化方案）

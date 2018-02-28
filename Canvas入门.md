@@ -1,4 +1,4 @@
-# Canvas入门
+# canvas入门
 
 ## 基本要点
 + const ctx = document.getElementById('canvas').getContext('2d')

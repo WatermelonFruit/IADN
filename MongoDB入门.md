@@ -1,4 +1,4 @@
-# MongoDB入门
+# mongodb入门
 
 ## 前述
 + 服务器环境为Ubuntu 16.04 LTS
