@@ -1,5 +1,8 @@
 # react扬帆起航之基本环境搭建
 
+## 本文信息
++ 本文创建于2018/03/07
+
 ## create-react-app-typescript
 自从使用了[Angular](https://angular.io)之后，从此入了[Typescript](https://www.typescriptlang.org)的坑。当再次选择react时，就选择了基于react官方脚手架构建工具[create-react-app](https://github.com/facebook/create-react-app)的ts实现，即[create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript)。
 

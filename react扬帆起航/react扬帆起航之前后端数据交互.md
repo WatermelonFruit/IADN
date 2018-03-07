@@ -1,5 +1,9 @@
 # react扬帆起航之前后端数据交互
 
+## 本文信息
++ 本文创建于2018/03/07
+
+## 前述
 前后端交互是开发现代应用必不可少的内容，不同于[angular](https://angular.io)内置`HttpClientModule`，react默认并未提供用于http请求的功能。我们直接使用[fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)，但一些老旧的浏览器支持度不太好。本文中，我们推荐使用基于`Promise`的库 -- [axios](https://github.com/axios/axios)。
 
 `axios`的基本用法非常简单，跟[jquery](http://jquery.com)的`ajax`类似。这里，主要提到两个需要注意的地方。

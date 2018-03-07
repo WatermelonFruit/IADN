@@ -1,5 +1,8 @@
 # react扬帆起航之路由配置与组件分割
 
+## 本文信息
++ 本文创建于2018/03/07
+
 ## 路由
 [react-router](https://github.com/ReactTraining/react-router) v4 发生了巨大改变，由静态路由开始转向动态路由，从此，就像使用普通组件一样来声明路由。其实，路由从此就是一个普通组件。
 
