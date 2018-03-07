@@ -1,6 +1,6 @@
 # react扬帆起航之基本环境搭建
 
-## [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript)
+## create-react-app-typescript
 自从使用了[Angular](https://angular.io)之后，从此入了[Typescript](https://www.typescriptlang.org)的坑。当再次选择react时，就选择了基于react官方脚手架构建工具[create-react-app](https://github.com/facebook/create-react-app)的ts实现，即[create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript)。
 
 使用起来非常简单，几个命令即可:
@@ -17,8 +17,8 @@ npm start
 
 OK, done!
 
-## [react-app-rewired](https://github.com/timarney/react-app-rewired)
-[react-app-rewired](https://github.com/timarney/react-app-rewired)是一个对[create-react-app](https://github.com/facebook/create-react-app)进行自定义配置的社区解决方案，可以在不 `eject` 的情条件下对[create-react-app](https://github.com/facebook/create-react-app)进行高级配置。
+## react-app-rewired
+[react-app-rewired](https://github.com/timarney/react-app-rewired)是一个对`create-react-app`进行自定义配置的社区解决方案，可以在不 `eject` 的情条件下对`create-react-app`进行高级配置。
 
 ```bash
 npm i react-app-rewired -D
@@ -119,8 +119,12 @@ module.exports = function override(config, env) {
 }
 ```
 
-至此，第一部分关于基本环境搭建的内容完毕完毕。
+至此，关于基本环境搭建的内容完毕。
 
 ***
 
-react扬帆启航系列介绍的是我搭建react的种子项目的过程，如果你觉得对你有些帮助的话，给[react-sail](https://github.com/vdfor/react-sail)个start吧，有兴趣的朋友可以一起来完善。
+[react扬帆启航](https://segmentfault.com/blog/react-sail)专栏分享的时我个人学习与实践react过程中的一些历程，希望借此专栏与大家共同探讨react相关的技术，以求进步。
+
+第一期系列文章主要内容有： react的基本环境搭建、路由配置与组建分割、前后端数据交互、状态管理(mobx)、react应用部署以及同构。
+
+第一期系列文章主要记录的是我搭建react的种子项目[react-sail](https://github.com/vdfor/react-sail)的过程。如果你觉得对你有些帮助的话，给[react-sail](https://github.com/vdfor/react-sail)个start吧，有兴趣的朋友可以一起来完善。
