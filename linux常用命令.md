@@ -52,12 +52,16 @@ tar -Jxf xxx.tar.xz
 7z x Files.7z -oabc #解压Files.7z到abc文件夹
 ```
 
-## 查看日志
+## 查看日志/文件
 ```bash
 # 查看日志
 less /home/proc/logs/log.txt
 # 实时查看
 tail -f /home/proc/logs/log.txt # 查看/home/proc/logs/log.txt日志文件
+# 查看文件最后20行
+tail -n 20 log.txt
+# 查看文件开始20行
+head -n 20 log.txt
 ```
 ## 修改默认编辑器
 ```bash

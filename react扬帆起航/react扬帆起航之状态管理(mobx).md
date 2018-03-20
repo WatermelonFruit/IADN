@@ -2,8 +2,9 @@
 
 ## 本文信息
 + 本文创建于2018/03/07
++ 2018/03/20 更新 -- 统一管理store
 
-# mobx简介与使用
+## mobx简介与使用
 一直以来，[redux](https://redux.js.org/)是react事实上的状态管理工具，直到[mobx](https://github.com/mobxjs/mobx)横空出世。从此，多了一个选择。关于mobx与redux的异同，网上有很多文章介绍，本文中不再叙述了。本文主要介绍react与mobx搭配使用，当然，有时间我也许会写一个react与redux搭配使用的示例教程。
 
 作为一个功能强大的状态管理工具，mobx上手确是十分简单。我们知道，redux强调单一数据来源，即单一store。然而，在大型应用时，单一store往往带来管理不便的问题。相对而言，mobx并不推崇单一store。我们可以对每一个路由组件构建一个store。当然，也可以构建一个全局的store，服务于所有组件。全局store与局部store是可以完全搭配使用的。
@@ -58,6 +59,65 @@ class Home extends React.Component<{}, {}> {
 }
 
 export default Home;
+```
+
+## 统一管理store
+随着应用的增大，如果在每个组件目录下建立对应的store，难免难以维护。因此，统一管理store是一个较好的选择。
+
+在根目录下简历stores目录，作为存放store的仓库，所有的store都放在这里。
+
+在入口文件`index.tsx`:
+```tsx
+// index.tsx
+...
+import { Provider } from 'mobx-react';
+import rootStore from './stores/RootStore';
+import homeStore from './stores/HomeStore';
+...
+
+const stores = {
+  rootStore,
+  homeStore
+};
+
+ReactDOM.render(
+  <Provider {...stores}>
+    <Router basename={process.env.PUBLIC_URL}>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root') as HTMLElement
+);
+```
+
+在需要使用到store的组件:
+```tsx
+// /Home/index.tsx
+...
+import { observer, inject } from 'mobx-react';
+import { HomeStore } from '../stores/HomeStore';
+import { RootStore } from '../stores/RootStore';
+...
+
+interface Props {
+  homeStore: HomeStore;
+  rootStore: RootStore;
+}
+
+@inject('rootStore')
+@inject('homeStore')
+@observer
+class HomeComponent extends React.Component<Props, {}> {
+  ...
+  render() {
+    return (
+      <div>
+        <h1 className={styles.title}>{this.props.homeStore.title}</h1>
+        <p>{this.props.rootStore.title}</p>
+      </div>
+    );
+  }
+}
 ```
 
 
