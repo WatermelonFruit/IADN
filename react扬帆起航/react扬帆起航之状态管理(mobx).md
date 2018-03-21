@@ -2,7 +2,7 @@
 
 ## 本文信息
 + 本文创建于2018/03/07
-+ 2018/03/20 更新 -- 统一管理store
++ 2018/03/20 新增 -- 统一管理store
 
 ## mobx简介与使用
 一直以来，[redux](https://redux.js.org/)是react事实上的状态管理工具，直到[mobx](https://github.com/mobxjs/mobx)横空出世。从此，多了一个选择。关于mobx与redux的异同，网上有很多文章介绍，本文中不再叙述了。本文主要介绍react与mobx搭配使用，当然，有时间我也许会写一个react与redux搭配使用的示例教程。

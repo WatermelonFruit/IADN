@@ -167,20 +167,30 @@ CREATE INDEX test_table_link_id on tab_log_list(link_id);
 ```
 
 ## [koa](http://koajs.com/) with mysql
-```js (config/db.js)
+
+```js
+// config.js
 module.exports = {
-  host: '127.0.0.1',
-  port: 3306,
-  user: 'root',
-  password: '123456',
-  database: 'test',
-  connectionLimit: 20, // 最大连接数
-  multipleStatements: true // 支持多条sql语句
+  ···
+  db: {
+    mysql: {
+      host: '127.0.0.1',
+      port: 3306,
+      user: 'root',
+      password: '123456',
+      database: 'test',
+      connectionLimit: 20, // 最大连接数
+      multipleStatements: true // 支持多条sql语句
+    }
+  }
+  ···
 }
 ```
-```js (session.js)
+
+```js
+// fetch.js
 const mysql = require('mysql')
-const pool = mysql.createPool(require('./config/db'))
+const pool = mysql.createPool(require('./config').db.mysql)
 const execQuery = (sqlString, callback) => {
   pool.getConnection((err, connection) => {
     if (err) {
@@ -204,11 +214,13 @@ module.exports = sqlString => new Promise((resolve, reject) => {
   })
 })
 ```
-```js (api/api.js)
+
+```js
+// api.js
 const router = require('koa-router')()
-const session = require('../session')
+const fetch = require('./fetch')
 router.get('/', async (ctx) => {
-  ctx.body = await session('select * from test_table')
+  ctx.body = await fetch('select id,name from test_table')
 })
 module.exports = router
 ```

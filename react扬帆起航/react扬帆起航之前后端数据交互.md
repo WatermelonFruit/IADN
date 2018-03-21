@@ -2,11 +2,12 @@
 
 ## 本文信息
 + 本文创建于2018/03/07
++ 2018/03/20 新增 -- 拦截器
 
 ## 前述
 前后端交互是开发现代应用必不可少的内容，不同于[angular](https://angular.io)内置`HttpClientModule`，react默认并未提供用于http请求的功能。我们直接使用[fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)，但一些老旧的浏览器支持度不太好。本文中，我们推荐使用基于`Promise`的库 -- [axios](https://github.com/axios/axios)。
 
-`axios`的基本用法非常简单，跟[jquery](http://jquery.com)的`ajax`类似。这里，主要提到两个需要注意的地方。
+`axios`的基本用法非常简单，跟[jquery](http://jquery.com)的`ajax`类似。
 
 ## 设置baseUrl
 如果`restful api`至于一个单独域名之下，且支持跨域。我们可以对`axios`进行自定义配置设置`baseUrl`并封装。
@@ -34,6 +35,42 @@ import client from 'client.ts';
     // handle error
   });
 ...
+```
+
+## 拦截器
+```ts
+// client.ts
+import axios from 'axios';
+
+// 请求头携带token
+axios.interceptors.request.use(
+  (config) => {
+    const storageCredential = localStorage.getItem('credentials');
+    const credentials = storageCredential ? JSON.parse(storageCredential) : null;
+    if (credentials && credentials.access_token) {
+      config.headers = { ...config.headers, Authorization: 'Bearer ' + credentials.access_token };
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// 处理response
+axios.interceptors.response.use(
+  (response) => {
+    // success handle
+    return response;
+  },
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      // 401 handle
+    }
+    return Promise.reject(error);
+  });
+
+  export default axios;
 ```
 
 ## 开发环境下`proxy`设置
