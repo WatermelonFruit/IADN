@@ -13,6 +13,8 @@ import * as send from 'koa-send';
 
 const app = new Koa();
 
+const router = new Router();
+
 // static
 app.use(statics(path.join(__dirname, '../views')));
 
