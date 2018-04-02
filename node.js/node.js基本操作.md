@@ -7,8 +7,8 @@
 npm root # 查看当前包的安装路径
 npm root -g # 查看全局安装包的路径
 npm config get prefix # 查看npm默认全局安装目录
-npm install <name>  # 安装命令
-npm install -g <name> # 全局安装
+npm i <name>  # 安装命令
+npm i -g <name> # 全局安装
 npm ls # 显示所有的安装包
 npm remove <name> # 卸载命令
 npm update <name> # 更新
@@ -20,12 +20,6 @@ npm update <name> # 更新
 + 类命名 UserDatabase
 + 常量命名 FORM_NAME 下划线命名的方式
 + 包名 不要包含js/node等
-
-### 异步
-```js
-function sss(err,data) {
-}
-```
 
 ## linux下安装node
 
@@ -54,6 +48,13 @@ ln -s /usr/local/src/node-v8.x.x-linux-x64/bin/npm /usr/local/bin/npm
 
 ### [nvm](https://github.com/creationix/nvm)安装
 
+## 设置源
+```bash
+# 使用淘宝镜像
+npm config set registry=https://registry.npm.taobao.org
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass
+```
+
 ## 离线安装npm全局包
 + 此处以离线安装pm2为例
 + 在具备互联网连接的PC执行
@@ -75,4 +76,3 @@ tar -zcvf pm2.tar.gz
 # 通过软链接的形式将node和npm连接到系统默认的PATH目录下的一个（此处以/usr/local/bin为例）
 ln -s <npm_path>/pm2/bin/pm2 /usr/local/bin/pm2
 ```
-
