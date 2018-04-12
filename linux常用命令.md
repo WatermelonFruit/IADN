@@ -49,6 +49,7 @@ tar -Jxf xxx.tar.xz
 ### 7z压缩/解压
 ```bash
 7z a Files.7z * -r ： #增加当前文件夹及其子文件夹下的所有文件到Files.7z中
+7z a -tzip test.zip test -xr\!node_modules -r : #增加test文件夹及其子文件夹下除node_modules之外的所有文件到test.zip中
 7z x Files.7z -oabc #解压Files.7z到abc文件夹
 ```
 
