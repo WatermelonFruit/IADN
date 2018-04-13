@@ -32,6 +32,7 @@ nohup program & #ssh关闭后保持当前进程继续运行,如： nohup npm sta
 # 将整个 /etc 目录下的文件全部打包成为/tmp/etc.tar
 tar -cvf /tmp/etc.tar /etc    # 仅打包，不压缩
 tar -zcvf /tmp/etc.tar.gz /etc   # 打包后，以 gzip 压缩
+tar -zcvf /tmp/etc.tar.gz /etc --exclude /etc/hello --exclude /etc/test # 不包含hello test
 # 打包成tar.xz 方法1
 tar -cvf xxx.tar xxx/ # 先打包成tar
 xz -z xxx.tar
