@@ -13,6 +13,7 @@ mkdir 目录名         # 创建一个目录
 rmdir 空目录名      # 删除一个空目录
 rm 文件名 文件名   # 删除一个文件或多个文件
 rm –rf 非空目录名 # 删除一个非空目录下的一切
+find ./ -name '*.d.ts' -type f | xargs  rm -f # 递归删除指定后缀名的文件
 touch 文件名      # 创建一个空文件
 mv file1 file2    # 将文件 file1，更改文件名为 file2
 mv file1 dir1    # 将文件 file1，移到目录 dir1下，文件名仍为 file1
@@ -78,4 +79,21 @@ crontab -e
 # 例如，00 00 * * * sh /home/docker/nginx-t/html/xuancang/scripts/build-admin.sh
 # 列出定时任务
 crontab -l
+```
+
+## svn/git
+```bash
+# svn批量上传 start
+# 一次性增加所有新增的文件到svn库：
+svn st | awk '{if ($1 == "?") {print $2} }' | xargs svn add
+# 一次性从svn库删除所有需要删除的文件
+svn st | awk '{if ($1 == "!") {print $2}}' | xargs svn rm
+# 提交
+svn ci -F comment.md # 注释从文件读取
+svn commit -m 'update'
+# svn批量上传 end
+
+# git 强制覆盖本地
+git fetch --all 
+git reset --hard origin/master 
 ```
