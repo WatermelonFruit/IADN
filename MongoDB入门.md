@@ -35,7 +35,7 @@ docker pull mongo
 # -v：创建一个位置 /home/docker/mongo数据卷并挂载到容器的/data/db位置
 # -p：指定容器27017端口映射到本地宿主27017端口，以便mongo裸露在外网
 # -d：守护态运行mongo
-docker run --name mongo -v /home/docker/mongo:/data/db -p 27017:27017 -d mongo
+docker run --name mongo -v /home/docker/mongo:/data/db -p 27017:27017 --restart=always -d mongo --auth
 # 启动/重启/停止
 docker start mongo
 docker restart mongo
@@ -70,15 +70,6 @@ db.updateUser({
   'test',
   {customData: {'pwd':'newpwd'}})
 })
-# 退出mongo后
-cp /entrypoint.sh /data/db
-# 宿主机执行
-# 在exec gosu mongodb "$@"之前增加一行内容set -- "$@" "--auth"
-nano /home/docker/mongo/entrypoint.sh
-# 在容器执行
-cp -f /data/db/entrypoint.sh /
-# 在宿主机重启mongo
-docker restart mongo
 ```
 
 ## 数据库操作
